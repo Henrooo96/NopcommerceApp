@@ -10,10 +10,10 @@ from utilities import XLUtils
 class Test_002_DDT_LoginPage:
     baseURL = ReadConfig.getApplicationURL()
     path = ".//TestData/LoginData.xlsx"
-    logger = LogGen.loggen()
+    logger = LogGen.loggen('self', 'setup')
 
     @pytest.mark.regression
-    def test_login_ddt(self, setup):
+    def test_login_ddt(self,setup):
         self.logger.info("*************************** Test_002_DDT_Login ******************************")
         self.logger.info("*************************** Verifying Login Test ******************************")
         self.driver = setup

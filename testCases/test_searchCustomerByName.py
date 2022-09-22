@@ -14,7 +14,7 @@ class Test_SearchCustomerByName_005:
     logger = LogGen.loggen()
 
     @pytest.mark.regression
-    def test_searchCustomerByName(self, setup):
+    def test_searchCustomerByName(self,setup):
         self.logger.info("******* SearchingCustomerByName_005 ********")
         self.driver = setup
         self.driver.get(self.baseURL)
@@ -34,11 +34,11 @@ class Test_SearchCustomerByName_005:
 
         self.logger.info("******* searching customer by Name *******")
         searchcust = SearchCustomer(self.driver)
-        searchcust.setFirstName("Victoria")
-        searchcust.setLastName("Terces")
+        searchcust.setFirstName("Billy")
+        searchcust.setLastName("Ross")
         searchcust.clickSearch()
         time.sleep(5)
-        status = searchcust.searchCustomerByName("Victoria Terces")
+        status = searchcust.searchCustomerByName("Billy Ross")
         assert True == status
         self.logger.info("*********** TC_SearchCustomerByName_005 Finished  ***********")
         self.driver.close();

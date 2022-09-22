@@ -25,9 +25,9 @@ def browser(request):
 
 
 def pytest_configure(config):
-    config.metadata['Project Name'] = 'nop Commerce'
-    config.metadata['Module name'] = 'Customers'
-    config.metadata['Tester'] = 'Henry Aneke'
+    config._metadata['Project Name'] = 'nop Commerce'
+    config._metadata['Module name'] = 'Customers'
+    config._metadata['Tester'] = 'Henry Aneke'
 
 
 @pytest.mark.optionalhook

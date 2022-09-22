@@ -1,3 +1,4 @@
+from distutils.core import setup
 import pytest
 import time
 from pageObjects.LoginPage import LoginPage
@@ -12,10 +13,11 @@ class Test_03_AddCustomer:
     baseURL = ReadConfig.getApplicationURL()
     username = ReadConfig.getUseremail()
     password = ReadConfig.getPassword()
-    logger = LogGen.loggen()
+    logger = LogGen.loggen('self', 'setup')
+
 
     @pytest.mark.sanity
-    def test_addCustomer(self, setup):
+    def test_addCustomer(self,setup):
         self.logger.info("******* Test_003_AddCustomer ********")
         self.driver = setup
         self.driver.get(self.baseURL)
@@ -25,7 +27,7 @@ class Test_03_AddCustomer:
         self.lp.setUserName(self.username)
         self.lp.setPassword(self.password)
         self.lp.clickLogin()
-        self.logger.info("********** Login successful**********")
+        self.logger.info("********** Login successful **********")
 
         self.logger.info("********** Starting Add Customer Test ***********")
 
@@ -43,10 +45,10 @@ class Test_03_AddCustomer:
         self.addcust.setCustomerRoles("Guests")
         self.addcust.setManagerOfVendor("Vendor 2")
         self.addcust.setGender("Male")
-        self.addcust.setFirstName("Henry")
-        self.addcust.setLastName("Aneke")
-        self.addcust.setDob("05/01/1996")
-        self.addcust.setCompanyName("Alten")
+        self.addcust.setFirstName("kenneth")
+        self.addcust.setLastName("Williams")
+        self.addcust.setDob("05/07/1886")
+        self.addcust.setCompanyName("Tesla")
         self.addcust.setAdminContent("This for testing.......")
         self.addcust.clickOnSave()
 

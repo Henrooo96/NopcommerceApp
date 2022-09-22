@@ -10,7 +10,7 @@ class Test_001_LoginPage:
     username = ReadConfig.getUseremail()
     password = ReadConfig.getPassword()
 
-    logger = LogGen.loggen()
+    logger = LogGen.loggen('self', 'setup')
 
     @pytest.mark.regression
     def test_homePageTitle(self, setup):
@@ -42,7 +42,7 @@ class Test_001_LoginPage:
         self.lp.clickLogin()
         act_title = self.driver.title
         self.driver.close()
-        if act_title == "Dashboard / nopCommerce administration":
+        if act_title == "Dashboard / nopCommerce":
             assert True
             self.logger.info("*************************** Login test is passed ******************************")
             self.driver.close()
